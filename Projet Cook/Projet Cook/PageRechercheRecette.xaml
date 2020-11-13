@@ -1,0 +1,25 @@
+﻿<Page x:Class="Projet_Cook.PageRechercheRecette"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projet_Cook"
+      mc:Ignorable="d" 
+      d:DesignHeight="80" d:DesignWidth="1120"
+      Title="PageRechercheRecette">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <Grid>
+        <Button x:Name="BAll" Click="BAll_Click"  Content="Afficher toute les recettes" HorizontalAlignment="Left" Height="39" Margin="25,20,0,0" VerticalAlignment="Top" Width="200" Background="#FF1C6534" Foreground="#DDFFFFFF"/>
+        <Button x:Name="BRecherche" Click="BRecherche_Click" Content="Rechercher" HorizontalAlignment="Right" Height="39" Margin="0,20,200,0" VerticalAlignment="Top" Width="122" Background="#FF1C6534" Foreground="#DDFFFFFF"/>
+        <TextBox Background="#FFF3F3F3" x:Name="TRecherche" Style="{StaticResource placeHolderRecherche}" Tag="Recherchez un nom, un produit..." FontSize="14" HorizontalAlignment="Right" Margin="0,20,330,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" BorderThickness="1"  Height="39" Width="336"/>
+
+    </Grid>
+</Page>

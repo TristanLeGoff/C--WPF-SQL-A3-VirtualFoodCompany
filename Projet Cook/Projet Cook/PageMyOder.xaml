@@ -1,0 +1,81 @@
+﻿<Page x:Class="Projet_Cook.PageMyOder"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projet_Cook"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" 
+      d:DesignHeight="590" d:DesignWidth="1120"
+      Title="PageMyOder">
+
+    <Page.Resources>
+        <Style x:Key="myHeaderStyle" BasedOn="{StaticResource MaterialDesignFlatButton}" TargetType="{x:Type GridViewColumnHeader}">
+            <Setter Property="IsEnabled" Value="False" />
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" Value="#FF1C6534"/>
+                    <Setter Property="Foreground" Value="#DDFFFFFF"/>
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="myLBStyle" TargetType="{x:Type ListViewItem}" BasedOn="{StaticResource MaterialDesignGridViewItem}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="Background" Value="#FFE9E1DF" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver"  Value="True">
+                    <Setter Property="Background" Value="#FFD3EED6" />
+                    <Setter Property="Opacity" Value="1"/>
+                </Trigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#FF6CC87A" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Page.Resources>
+
+    <Grid>
+        <Image   Stretch="UniformToFill" HorizontalAlignment="Left" Height="613" VerticalAlignment="Top" Width="1120" Source="background.png" Visibility="Visible" Margin="0,0,0,-23.4"/>
+        <Border BorderBrush="#FF939393" BorderThickness="1" CornerRadius="5" Margin="20,10,196,200">
+            <ListView  x:Name="LVrecipe" ItemContainerStyle="{StaticResource myLBStyle}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Margin="0.2,0.2,-0.8,-0.2">
+                <ListView.View >
+                    <GridView  ColumnHeaderContainerStyle="{StaticResource myHeaderStyle}">
+                        <GridViewColumn Header="Nom de la recette" Width="300" DisplayMemberBinding="{Binding Key.Name, Mode=Default}"  />
+                        <GridViewColumn Header="Nom du créateur de la recette" Width="225" DisplayMemberBinding="{Binding Key.RecipeCreator, Mode=Default}"  />
+                        <GridViewColumn Header="Type" Width="80" DisplayMemberBinding="{Binding Key.Type,  Mode=Default}" />
+                        <GridViewColumn Header="Nombre de vente" Width="150" DisplayMemberBinding="{Binding Key.NbrSales,  Mode=Default}" />
+                        <GridViewColumn Header="Prix" Width="60" DisplayMemberBinding="{Binding Key.Price,  Mode=Default}"  />
+                        <GridViewColumn Header="Quantité" Width="90" DisplayMemberBinding="{Binding Value,  Mode=Default}"  />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+
+        </Border>
+
+        <Button x:Name="BDelete" Click="BDelete_Click"  Margin="0,10,10,470.4" Height="Auto" HorizontalAlignment="Right" Background="#FFDA6B6B" Width="174" BorderBrush="#FFDA6B6B" Foreground="#DD000000">
+            <StackPanel>
+                <TextBlock Text="Supprimer la recette selectionnée du panier" TextAlignment="Center" TextWrapping="Wrap" Width="145"/>
+                <materialDesign:PackIcon Margin="0,10,0,0" Kind="Bin" Height="35" Width="35" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+        </Button>
+        <Button x:Name="BDetail" Click="BDetail_Click"  Margin="0,142,10,338.4" Height="Auto" HorizontalAlignment="Right" Background="#FF6CC87A" Width="174">
+            <StackPanel>
+                <TextBlock Text="Voir la description de la recette selectionnée" TextAlignment="Center" TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Margin="0,10,0,0" Kind="Receipt" Height="35" Width="35" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+        </Button>
+        <TextBlock x:Name="TPrice" HorizontalAlignment="Left" Height="61" Margin="498,412,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" Foreground="Green"/>
+        <TextBlock x:Name="TDescription" HorizontalAlignment="Left" Height="162" Margin="936,291,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" />
+        <Button x:Name="BCommand" Click="BCommand_Click"  Margin="0,478,385,27.4" Height="Auto" HorizontalAlignment="Right" Background="#FF6CC87A" Width="302">
+            <StackPanel>
+                <TextBlock Text="Commander mon pannier" TextAlignment="Center" TextWrapping="Wrap"/>
+                <materialDesign:PackIcon Margin="0,10,0,0" Kind="ShoppingCart" Height="35" Width="35" HorizontalAlignment="Center"/>
+            </StackPanel>
+
+        </Button>
+        <TextBlock x:Name="TError" HorizontalAlignment="Left" Height="61" Margin="780,494,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="298" Foreground="Red" FontSize="18"/>
+    </Grid>
+</Page>

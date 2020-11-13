@@ -1,0 +1,20 @@
+﻿<Page x:Class="Projet_Cook.PageHello"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Projet_Cook"
+      mc:Ignorable="d" 
+      d:DesignHeight="590" d:DesignWidth="1120"
+      Title="PageHello">
+
+    <Grid Margin="0,0,0,10.4">
+        <Image   Stretch="UniformToFill" HorizontalAlignment="Left" Height="613" VerticalAlignment="Top" Width="1120" Source="background.png" Visibility="Visible" Margin="0,0,0,-23.4"/>
+        <TextBlock HorizontalAlignment="Left" Height="110" Margin="303,19,0,0" TextWrapping="Wrap" Text="Bonjour, Bienvenue dans le projet Cook" VerticalAlignment="Top" Width="520" FontSize="40" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="92" Margin="190,169,0,0" TextWrapping="Wrap" Text="Vous pouvez naviguer dans l'application grâce à la navbar déroulante à gauche" VerticalAlignment="Top" Width="769" FontSize="30"/>
+        <TextBlock HorizontalAlignment="Left" Height="126" Margin="190,266,0,0" TextWrapping="Wrap" Text="Tout ce qui est relatif à votre compte ainsi que la démonstration est en haut à droite avec les icones pop up" VerticalAlignment="Top" Width="791" FontSize="30"/>
+        <TextBlock HorizontalAlignment="Left" Height="92" Margin="228,445,0,0" TextWrapping="Wrap" Text="Toute l'équipe de cook vous shouaite bon appétit !" VerticalAlignment="Top" Width="719" FontSize="30"/>
+
+
+    </Grid>
+</Page>
